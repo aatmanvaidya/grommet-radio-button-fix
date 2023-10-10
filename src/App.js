@@ -33,24 +33,25 @@ const App = () => {
 
   return (
     <Grommet theme={theme} full>
-      {/* <Box align="center" pad="large">
+      <Box align="center" pad="large">
         <Text>testing RadioButtonGroup</Text>
-        <Form onSubmit={handleSubmit}>
-          <FormField name="question" label="Question">
+        <Form
+          onSubmit={handleSubmit}
+          onChange={(nextValue) => setSelectedOption(nextValue)}
+        >
+          <FormField name="question" label="Question" required>
             <RadioButtonGroup
               name="question"
               options={[
-                { label: 'Yes', value: true },
-                { label: 'No', value: false },
+                { label: "Yes", value: true },
+                { label: "No", value: false },
               ]}
-              value={selectedOption}
-              onChange={(e) => setSelectedOption(e.target.value)}
             />
           </FormField>
           <button type="submit">Submit</button>
         </Form>
-      </Box> */}
-      <Box align="center" pad="large">
+      </Box>
+      {/* <Box align="center" pad="large">
         <Form onSubmit={handleSubmit}>
           <FormField name="question" label="Question">
             <RadioButton
@@ -70,7 +71,7 @@ const App = () => {
           </FormField>
           <button type="submit">Submit</button>
         </Form>
-      </Box>
+      </Box> */}
     </Grommet>
   );
 };
